@@ -64,12 +64,12 @@ namespace Regul
 		string CalcSimpleExpr(string str)
 		{
 				while(Regex.IsMatch(str, patternPow)) str = Regex.Replace (str, patternPow, Pow);
-				// Dif2Sum
-				str = Regex.Replace(str, patternDif, match => ("+"+match.Value));
 				// Div2Mult
 				str = Regex.Replace( str, patternDiv, Div2M);
 				//Mult		
 				while(Regex.IsMatch(str, patternMult)) str = Regex.Replace (str, patternMult, Multi);
+				// Dif2Sum
+				str = Regex.Replace(str, patternDif, match => ("+"+match.Value));
 				// Sum
 				while(Regex.IsMatch(str, patternSumm)) str = Regex.Replace (str, patternSumm, Summ);
 								
